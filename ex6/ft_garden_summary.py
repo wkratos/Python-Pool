@@ -1,0 +1,7 @@
+print("Enter garden name:")
+garden_name = input()
+print("Enter number of plants:")
+plants = int(input())
+print("Garden:", garden_name)
+print("Plants:", plants)
+print("Status: Growing well!")
