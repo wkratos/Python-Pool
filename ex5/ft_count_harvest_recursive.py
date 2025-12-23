@@ -1,11 +1,8 @@
-def ft_count_harvest_recursive():
-    days = int(input("Days until harvest: "))
-
-    def print_day(i, total):
-        if i > total:
-            return
-        print("Day", i)
-        print_day(i + 1, total)
-
-    print_day(1, days)
-    print("Harvest time!")
+def ft_count_harvest_recursive(day=1):
+    if (day == 1):
+        ft_count_harvest_recursive.days = int(input("Days until harvest: "))
+    if day > ft_count_harvest_recursive.days:
+        print("Harvest time!")
+        return
+    print("Day", day)
+    ft_count_harvest_recursive(day + 1)
