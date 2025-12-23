@@ -1,2 +1,2 @@
 def ft_hello_garden():
-    print("Hello, Garden!")
+    print("Hello, Garden Community!")
