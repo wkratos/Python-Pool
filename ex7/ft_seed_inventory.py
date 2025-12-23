@@ -6,5 +6,3 @@ def ft_seed_inventory(name, quantity, seed_type):
 
     print(f"{name} seeds: {quantity} {seed_type}")
     return name, quantity, seed_type
-
-sd = ft_seed_inventory("Sunflower", 50, "Flowers")

@@ -1,11 +1,8 @@
-print("Days until harvest:")
-days = int(input())
-
-def print_days(i, total):
+def ft_count_harvest_recursive(i, total):
+    print("Days until harvest:")
+    days = int(input())
     if i > total:
         return
     print("Day", i)
-    print_days(i + 1, total)
-
-print_days(1, days)
-print("Harvest time!")
+    ft_count_harvest_recursive(i + 1, total)
+    print("Harvest time!")
