@@ -7,7 +7,7 @@ information about plants in a community garden.
 class Plant:
     """Store basic information about a garden plant."""
 
-    def __init__(self, name, age_days, height):
+    def __init__(self, name, height, age_days):
         """Initialize a plant with a name, age in days, and height in cm."""
         self.name = name
         self.age_days = age_days

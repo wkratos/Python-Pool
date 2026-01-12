@@ -11,19 +11,19 @@ class Plant:
         Plant.plant_count += 1
 
     def get_info(self):
-        """Return a summary string for the plant."""
-        return (f"Created: {self.name} ({self.height}cm, "
-                f"{self.age_days} days)")
+        """Print a summary string for the plant."""
+        print(f"Created: {self.name} ({self.height}cm, {self.age_days} days)")
 
 
 if __name__ == "__main__":
     print("=== Plant Factory Output ===")
-    rose = Plant("Rose", 25, 30)
-    oak = Plant("Oak", 200, 365)
-    cactus = Plant("Cactus", 5, 90)
-    sunflower = Plant("Sunflower", 80, 45)
-    fern = Plant("Fern", 15, 120)
-    plants = [rose, oak, cactus, sunflower, fern]
+    plants = [
+        Plant("Rose", 25, 30),
+        Plant("Oak", 200, 365),
+        Plant("Cactus", 5, 90),
+        Plant("Sunflower", 80, 45),
+        Plant("Fern", 15, 120)
+    ]
     for plant in plants:
         plant.get_info()
     print(f"\nTotal plants created: {Plant.plant_count}")
