@@ -43,7 +43,7 @@ class Tree(Plant):
     """A plant type that has a trunk diameter and can produce shade."""
 
     def __init__(self, name, height, age_days, trunk_diameter):
-        """Initialize a tree with common plant data plus trunk diameter (cm)."""
+        """Initialize a tree with common plant data plus trunk diameter(cm)."""
         super().__init__(name, height, age_days)
         self.trunk_diameter = trunk_diameter
 
@@ -66,8 +66,9 @@ class Tree(Plant):
 class Vegetable(Plant):
     """A plant type that has a harvest season and nutritional value."""
 
-    def __init__(self, name, height, age_days, harvest_season, nutritional_value):
-        """Initialize a vegetable with common plant data plus extra attributes."""
+    def __init__(self, name, height, age_days, harvest_season,
+                 nutritional_value):
+        """Initialize a vegetable with common plant data plus extra data."""
         super().__init__(name, height, age_days)
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value

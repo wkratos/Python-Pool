@@ -1,3 +1,6 @@
+"""Plant Factory: Create multiple plant instances and track total created."""
+
+
 class Plant:
     """Represent a plant instance and track total created."""
 

@@ -1,3 +1,6 @@
+"""Garden Security System: Validate plant data before updates."""
+
+
 class SecurePlant:
     """Manage plant data with validation on height and age."""
 
