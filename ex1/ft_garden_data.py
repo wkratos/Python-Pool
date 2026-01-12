@@ -1,10 +1,20 @@
+"""
+This program defines a Plant class used to store and display basic
+information about plants in a community garden.
+"""
+
+
 class Plant:
+    """Store basic information about a garden plant."""
+
     def __init__(self, name, age_days, height):
+        """Initialize a plant with a name, age in days, and height in cm."""
         self.name = name
         self.age_days = age_days
         self.height = height
 
     def plant_info(self):
+        """Print a short summary of the plant's current details."""
         print(f"{self.name}: {self.height}cm, {self.age_days} days old")
 
 

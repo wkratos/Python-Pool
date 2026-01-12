@@ -1,5 +1,8 @@
 class SecurePlant:
+    """Manage plant data with validation on height and age."""
+
     def __init__(self, name, height, age_days):
+        """Initialize a secure plant and set validated attributes."""
         self.name = name
         self._height = 0
         self._age_days = 0
@@ -9,9 +12,13 @@ class SecurePlant:
         self.set_age(age_days)
 
     def set_height(self, new_height):
+        """Set the plant height if the value is non-negative."""
         if new_height < 0:
             print("\n")
-            print(f"Invalid operation attempted: height {new_height}cm [REJECTED]")
+            print(
+                f"Invalid operation attempted: height {new_height}cm "
+                "[REJECTED]"
+            )
             print("Security: Negative height rejected")
             print("\n")
             return
@@ -19,9 +26,13 @@ class SecurePlant:
         print(f"Height updated: {self._height}cm [OK]")
 
     def set_age(self, new_age):
+        """Set the plant age if the value is non-negative."""
         if new_age < 0:
             print("\n")
-            print(f"Invalid operation attempted: age {new_age} days [REJECTED]")
+            print(
+                f"Invalid operation attempted: age {new_age} days "
+                "[REJECTED]"
+            )
             print("Security: Negative age rejected")
             print("\n")
             return
@@ -29,7 +40,11 @@ class SecurePlant:
         print(f"Age updated: {self._age_days} days [OK]")
 
     def display_info(self):
-        print(f"Current plant: {self.name} ({self._height}cm, {self._age_days} days)")
+        """Print the plant's current status."""
+        print(
+            f"Current plant: {self.name} ({self._height}cm, "
+            f"{self._age_days} days)"
+        )
 
 
 if __name__ == "__main__":
