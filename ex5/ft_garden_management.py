@@ -63,13 +63,17 @@ class GardenManager:
                 f"Sunlight hours {sunlight_hours} is too high (max 12)"
             )
         print(
-            f"{plant_name}: healthy! "
-            f"(Water: {water_level}, Sunlight: {sunlight_hours})"
+            f"{plant_name}: healthy "
+            f"(water: {water_level}, sun: {sunlight_hours})"
         )
+
+    def check_tank(self) -> None:
+        raise WaterError("Not enough water in tank")
 
 
 def test_garden_management() -> None:
-    print("=== Garden Management System ===\n")
+    print("=== Garden Management System ===")
+    print()
 
     manager = GardenManager()
     print("Adding plants to garden...")
@@ -95,12 +99,13 @@ def test_garden_management() -> None:
 
     print("Testing error recovery...")
     try:
-        raise WaterError("Not enough water in tank")
+        manager.check_tank()
     except GardenError as ge:
         print(f"Caught GardenError: {ge}")
         print("System recovered and continuing...")
 
-    print("\nGarden management system test complete!")
+    print()
+    print("Garden management system test complete!")
 
 
 if __name__ == "__main__":
