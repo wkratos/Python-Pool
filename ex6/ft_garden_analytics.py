@@ -1,6 +1,4 @@
 """
-Exercise 6 - Garden Analytics Platform
-
 This module builds a small garden management and analytics system.
 
 It demonstrates:
@@ -9,8 +7,6 @@ It demonstrates:
 - An inheritance chain: Plant -> FloweringPlant -> PrizeFlower
 - Instance methods vs class methods vs static methods
 """
-
-from __future__ import annotations
 
 
 class Plant:
@@ -120,10 +116,7 @@ class GardenManager:
         """Add a plant to an owner's garden and record its initial height."""
         self.add_garden(owner)
         self._gardens[owner].append(plant)
-        # record initial height snapshot
-        self._stats[owner]._initial_heights[plant.name] = (
-            plant.height  # internal helper use
-        )
+        self._stats[owner]._initial_heights[plant.name] = plant.height
         print(f"Added {plant.name} to {owner}'s garden")
 
     def help_all_plants_grow(self, owner: str) -> None:
@@ -151,10 +144,10 @@ class GardenManager:
 
         total_growth = stats.total_growth(plants)
         regular, flowering, prize = stats.type_counts(plants)
-        print(f"Plants added: {len(plants)}, Total growth: {total_growth}cm")
+        print(f"\nPlants added: {len(plants)}, Total growth: {total_growth}cm")
         print(
             f"Plant types: {regular} regular, {flowering} flowering, "
-            f"{prize} prize flowers"
+            f"{prize} prize flowers\n"
         )
 
     @staticmethod
@@ -163,7 +156,7 @@ class GardenManager:
         return height >= 0
 
     @classmethod
-    def create_garden_network(cls) -> GardenManager:
+    def create_garden_network(cls) -> "GardenManager":
         """
         Create a demo network of gardens.
 
@@ -175,7 +168,7 @@ class GardenManager:
         return manager
 
     @classmethod
-    def garden_scores(cls, manager: GardenManager) -> dict[str, int]:
+    def garden_scores(cls, manager: "GardenManager") -> dict[str, int]:
         """
         Compute simple garden 'scores' for each owner.
 
@@ -188,17 +181,18 @@ class GardenManager:
 
 
 if __name__ == "__main__":
-    print("=== Garden Management System Demo ===")
+    print("=== Garden Management System Demo ===\n")
 
     gm = GardenManager.create_garden_network()
 
     gm.add_plant("Alice", Plant("Oak Tree", 100))
     gm.add_plant("Alice", FloweringPlant("Rose", 25, "red"))
     gm.add_plant("Alice", PrizeFlower("Sunflower", 50, "yellow", 10))
+    print()
 
     gm.help_all_plants_grow("Alice")
+    print()
     gm.garden_report("Alice")
-
     print(f"Height validation test: {GardenManager.validate_height(10)}")
     scores = GardenManager.garden_scores(gm)
     print(

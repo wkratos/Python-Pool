@@ -4,21 +4,21 @@
 class Plant:
     """Track a plant's height and age as it grows."""
 
-    def __init__(self, name, height, age_days):
+    def __init__(self, name, height, age_days) -> None:
         """Initialize a plant with name, height in cm, and age in days."""
         self.name = name
         self.age_days = age_days
         self.height = height
 
-    def grow(self):
+    def grow(self) -> None:
         """Increase the plant's height by 1 cm."""
         self.height += 1
 
-    def age(self):
+    def age(self) -> None:
         """Increase the plant's age by 1 day."""
         self.age_days += 1
 
-    def get_info(self):
+    def get_info(self) -> None:
         """Print a summary of the plant's current state."""
         print(f"{self.name}: {self.height}cm, {self.age_days} days old")
 

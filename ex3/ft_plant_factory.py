@@ -6,14 +6,14 @@ class Plant:
 
     plant_count = 0
 
-    def __init__(self, name, height, age_days):
+    def __init__(self, name, height, age_days) -> None:
         """Initialize a plant and increment the factory count."""
         self.name = name
         self.age_days = age_days
         self.height = height
         Plant.plant_count += 1
 
-    def get_info(self):
+    def get_info(self) -> None:
         """Print a summary string for the plant."""
         print(f"Created: {self.name} ({self.height}cm, {self.age_days} days)")
 
