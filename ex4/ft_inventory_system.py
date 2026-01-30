@@ -2,6 +2,9 @@ import sys
 
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
+    if len(sys.argv) == 1:
+        print("No inventory data provided.")
+        sys.exit(1)
     inventory = {}
     for arg in sys.argv[1:]:
         item = arg.split(":")
@@ -16,7 +19,7 @@ if __name__ == "__main__":
     print("=== Current Inventory ===")
     for name, quantity in inventory.items():
         percentage = (quantity / total * 100)
-        if quantity > 1:    
+        if quantity > 1:
             print(f"{name}: {quantity} units ({percentage:.1f}%)")
         else:
             print(f"{name}: {quantity} unit ({percentage:.1f}%)")
@@ -25,8 +28,15 @@ if __name__ == "__main__":
     print("=== Inventory Statistics ===")
     maxq = max(inventory.values())
     minq = min(inventory.values())
-    max_item = [name for name, quantity in inventory.items() if quantity == maxq][0]
-    min_item = [name for name, quantity in inventory.items() if quantity == minq][0]
+    max_item = [
+        name for name, quantity in inventory.items()
+        if quantity == maxq
+    ][0]
+
+    min_item = [
+        name for name, quantity in inventory.items()
+        if quantity == minq
+    ][0]
     if maxq > 1:
         print(f"Most abundant: {max_item} ({maxq} units)")
     else:
