@@ -1,4 +1,4 @@
-def game_event_stream(count):
+def game_event_stream(count) -> tuple:
     players = ("alice", "bob", "charlie")
     for i in range(1, count + 1):
         if i == 1:
@@ -8,7 +8,7 @@ def game_event_stream(count):
             yield ("bob", 12, "found treasure")
             continue
         if i == 3:
-            yield ("charlie", 8, "leveled up")
+            yield ("charlie", 8, "leve led up")
             continue
         player = players[(i - 1) % 3]
         if 4 <= i <= 4 + 88 - 1:
@@ -25,7 +25,7 @@ def game_event_stream(count):
         yield (player, level, action)
 
 
-def fib_stream():
+def fib_stream() -> int:
     a = 0
     b = 1
     while True:
@@ -44,7 +44,7 @@ def is_prime(n) -> bool:
     return True
 
 
-def prime_stream():
+def prime_stream() -> int:
     x = 2
     while True:
         if is_prime(x):
