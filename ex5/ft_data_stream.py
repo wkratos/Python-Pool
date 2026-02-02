@@ -33,7 +33,7 @@ def fib_stream():
         a, b = b, a + b
 
 
-def is_prime(n):
+def is_prime(n) -> bool:
     if n < 2:
         return False
     d = 2
@@ -52,7 +52,7 @@ def prime_stream():
         x += 1
 
 
-def print_int_sequence_from_generator(gen, count):
+def print_int_sequence_from_generator(gen, count) -> None:
     for i in range(count):
         n = next(gen)
         if i > 0:

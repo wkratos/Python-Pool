@@ -3,14 +3,33 @@ import sys
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
     if len(sys.argv) == 1:
-        print("No inventory data provided.")
+        print(
+            "No inventory data provided. "
+            "Usage: python3 ft_inventory_system.py item:quantity ..."
+        )
         sys.exit(1)
     inventory = {}
     for arg in sys.argv[1:]:
-        item = arg.split(":")
-        name = item[0]
-        quantity = int(item[1])
-        inventory[name] = quantity
+        parts = arg.split(":")
+        if len(parts) != 2 or parts[0] == "" or parts[1] == "":
+            print(
+                f"Invalid format: {arg}. "
+                "Expected item:quantity (e.g., sword:1)."
+            )
+            sys.exit(1)
+
+        name = parts[0]
+        try:
+            quantity = int(parts[1])
+        except ValueError:
+            print(
+                f"Invalid quantity for {name}: {parts[1]}. "
+                "Quantity must be a number."
+            )
+            sys.exit(1)
+        current = inventory.get(name, 0)
+        inventory[name] = current + quantity
+
     total = sum(inventory.values())
     print("Total items in inventory:", total)
     print("Unique item types:", len(inventory))
@@ -65,6 +84,9 @@ if __name__ == "__main__":
             restock.append(name)
     print("Restock needed:", restock)
     print()
+
+    demo = {}
+    demo.update(inventory)
 
     print("=== Dictionary Properties Demo ===")
     print("Dictionary keys:", list(inventory.keys()))
