@@ -6,18 +6,18 @@ def crisis_handler(filename: str, routine: bool) -> None:
 
     try:
         with open(filename, "r") as file:
-            content = file.read().strip()
-        print(f"SUCCESS: Archive recovered - ``{content}''")
+            content = file.read()
+        print(f"SUCCESS: Archive recovered - ''{content}''")
         print("STATUS: Normal operations resumed")
-    
+
     except FileNotFoundError:
         print("RESPONSE: Archive not found in storage matrix")
         print("STATUS: Crisis handled, system stable")
-    
+
     except PermissionError:
         print("RESPONSE: Security protocols deny access")
         print("STATUS: Crisis handled, security maintained")
-    
+
     except Exception:
         print("RESPONSE: Unexpected system anomaly detected")
         print("STATUS: Crisis handled, system stable")
@@ -28,7 +28,9 @@ if __name__ == "__main__":
     print()
 
     crisis_handler("lost_archive.txt", routine=False)
+    print()
     crisis_handler("classified_vault.txt", routine=False)
+    print()
     crisis_handler("standard_archive.txt", routine=True)
 
     print()
