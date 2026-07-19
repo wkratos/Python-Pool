@@ -269,6 +269,6 @@ The main objectives of this repository were to:
 
 ## Author
 
-**wkratos — `wkratos`**
+**`wkratos`**
 
-42 Network / 1337 student.
+42 Network.
