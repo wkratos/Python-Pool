@@ -10,14 +10,14 @@ if __name__ == "__main__":
           f'{validate_ingredients("dragon scales")}\n')
 
     print("Testing spell recording with validation:")
-    print('record_spell("Flame Burst", "fire air"): '
-          f'{record_spell("Flame Burst", "fire air")}')
-    print('record_spell("Forbidden Ritual", "dragon scales"): '
-          f'{record_spell("Forbidden Ritual", "dragon scales")}\n')
+    print('record_spell("Fireball", "fire air"): '
+          f'{record_spell("Fireball", "fire air")}')
+    print('record_spell("Dark Magic", "shadow"): '
+          f'{record_spell("Dark Magic", "shadow")}\n')
 
     print("Testing late import technique:")
-    print("Validator is imported inside record_spell() "
-          "to avoid circular imports.")
+    print('record_spell("Lightning", "air"):'
+          f"{record_spell('Lightning', 'air')}\n")
 
     print("Circular dependency curse avoided using late imports!")
     print("All spells processed safely!")

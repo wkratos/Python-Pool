@@ -1,7 +1,8 @@
 import alchemy.elements
 import alchemy.potions
 from alchemy.potions import healing_potion as heal
-from alchemy.elements import create_fire, create_water
+from alchemy.elements import create_fire
+from alchemy.elements import create_water, create_earth # noqa
 
 if __name__ == "__main__":
     print("=== Import Transmutation Mastery ===\n")
